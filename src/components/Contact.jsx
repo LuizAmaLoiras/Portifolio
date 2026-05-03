@@ -1,33 +1,8 @@
 import { ExternalLink, Mail, Send } from 'lucide-react';
-import { useState } from 'react';
 
 const contactEmail = 'visionplugimoveis@gmail.com';
 
 export default function Contact({ githubUrl }) {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-
-  const updateField = (event) => {
-    const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
-  };
-
-  const sendMessage = (event) => {
-    event.preventDefault();
-    const subject = encodeURIComponent('Contato pelo portifolio');
-    const body = encodeURIComponent(
-      [
-        'Ola, vim pelo seu portifolio e quero entrar em contato.',
-        '',
-        `Nome: ${form.name || '-'}`,
-        `Email: ${form.email || '-'}`,
-        '',
-        `Mensagem: ${form.message || '-'}`
-      ].join('\n')
-    );
-
-    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
-  };
-
   return (
     <section className="section contact-section" id="contato">
       <div className="container contact-card glass-card">
@@ -50,15 +25,21 @@ export default function Contact({ githubUrl }) {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={sendMessage}>
+        <form
+          className="contact-form"
+          action={`https://formsubmit.co/${contactEmail}`}
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Nova mensagem pelo portifolio" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
           <label>
             Nome
             <input
               name="name"
               type="text"
               placeholder="Seu nome"
-              value={form.name}
-              onChange={updateField}
+              required
             />
           </label>
           <label>
@@ -67,8 +48,7 @@ export default function Contact({ githubUrl }) {
               name="email"
               type="email"
               placeholder="voce@email.com"
-              value={form.email}
-              onChange={updateField}
+              required
             />
           </label>
           <label>
@@ -76,8 +56,7 @@ export default function Contact({ githubUrl }) {
             <textarea
               name="message"
               placeholder="Digite sua mensagem"
-              value={form.message}
-              onChange={updateField}
+              required
             ></textarea>
           </label>
           <button className="button primary" type="submit">
