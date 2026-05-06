@@ -2,11 +2,12 @@ import { Menu, Sparkles, X } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = [
-  { label: 'Início', href: '#inicio' },
+  { label: 'Inicio', href: '#inicio' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Habilidades', href: '#habilidades' },
   { label: 'Projetos', href: '#projetos' },
-  { label: 'Contato', href: '#contato' }
+  { label: 'Contato', href: '#contato' },
+  { label: 'Admin', href: '#admin' }
 ];
 
 export default function Header({ portfolioName }) {
@@ -14,8 +15,8 @@ export default function Header({ portfolioName }) {
 
   return (
     <header className="header">
-      <nav className="nav container" aria-label="Navegação principal">
-        <a className="brand" href="#inicio" aria-label="Ir para o início">
+      <nav className="nav container" aria-label="Navegacao principal">
+        <a className="brand" href="#inicio" aria-label="Ir para o inicio">
           <span className="brand-mark">
             <Sparkles size={18} />
           </span>

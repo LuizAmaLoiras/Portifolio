@@ -1,9 +1,10 @@
 const skills = [
-  { name: 'Java', value: 60, color: '#38bdf8' },
-  { name: 'JavaScript', value: 35, color: '#facc15' },
-  { name: 'Python', value: 45, color: '#22c55e' },
-  { name: 'CSS', value: 40, color: '#a855f7' },
-  { name: 'C#', value: 15, color: '#fb7185' }
+  { name: 'Java', value: 60, color: '#38bdf8', detail: 'Logica, estruturas e bases para sistemas.' },
+  { name: 'HTML', value: 50, color: '#f97316', detail: 'Estrutura de paginas, semantica e organizacao.' },
+  { name: 'Python', value: 45, color: '#22c55e', detail: 'Scripts, automacoes e raciocinio de backend.' },
+  { name: 'CSS', value: 40, color: '#a855f7', detail: 'Layouts responsivos, neon, glass e animacoes.' },
+  { name: 'JavaScript', value: 35, color: '#facc15', detail: 'Interacoes, formularios e experiencias dinamicas.' },
+  { name: 'C#', value: 15, color: '#fb7185', detail: 'Primeiros passos em orientacao a objetos.' }
 ];
 
 export default function Skills() {
@@ -12,7 +13,11 @@ export default function Skills() {
       <div className="container">
         <div className="section-heading">
           <span className="eyebrow">Habilidades</span>
-          <h2>Tecnologias que fazem parte da minha evolução.</h2>
+          <h2>Tecnologias que fazem parte da minha evolucao.</h2>
+          <p>
+            Esses percentuais representam meu nivel atual de pratica. O destaque fica para HTML em
+            50%, porque e uma das bases que mais uso para estruturar meus sites e projetos.
+          </p>
         </div>
 
         <div className="skills-grid">
@@ -31,7 +36,7 @@ export default function Skills() {
                   }}
                 ></span>
               </div>
-              <p>Nível atual de prática e evolução contínua.</p>
+              <p>{skill.detail}</p>
             </article>
           ))}
         </div>

@@ -1,20 +1,25 @@
-import { Cpu, Rocket, ShieldCheck } from 'lucide-react';
+import { Cpu, GraduationCap, Rocket, ShieldCheck } from 'lucide-react';
 
 const cards = [
   {
+    icon: GraduationCap,
+    title: 'Formacao',
+    text: 'Estudante do Colegio Marista Sao Luis, unindo rotina escolar com pratica constante em tecnologia.'
+  },
+  {
     icon: Rocket,
     title: 'Projetos modernos',
-    text: 'Gosto de criar interfaces bonitas, rápidas e fáceis de usar.'
+    text: 'Crio paginas, sistemas e experiencias digitais com visual futurista, animacoes e responsividade.'
   },
   {
     icon: Cpu,
-    title: 'Soluções funcionais',
-    text: 'Busco transformar ideias em sistemas úteis e organizados.'
+    title: 'Raciocinio tecnico',
+    text: 'Gosto de entender o problema, organizar a estrutura e montar solucoes que sejam bonitas e uteis.'
   },
   {
     icon: ShieldCheck,
-    title: 'Evolução constante',
-    text: 'Sempre estudando novas tecnologias para melhorar meus projetos.'
+    title: 'Evolucao constante',
+    text: 'Cada projeto vira um laboratorio para aprender mais sobre codigo, design, deploy e experiencia do usuario.'
   }
 ];
 
@@ -24,11 +29,16 @@ export default function About() {
       <div className="container split">
         <div>
           <span className="eyebrow">Sobre mim</span>
-          <h2>Desenvolvedor intermediário focado em experiências digitais responsivas.</h2>
+          <h2>Estudante, criador e desenvolvedor JR em crescimento.</h2>
           <p>
-            Sou um desenvolvedor intermediário e gosto de criar projetos modernos, responsivos e
-            funcionais usando programação. Trabalho com lógica, interfaces, sistemas e soluções que
-            unem visual tecnológico com usabilidade.
+            Meu portifolio reune projetos que mostram minha evolucao em HTML, CSS, JavaScript,
+            React, Python, Java e C#. Eu gosto de construir telas com identidade forte, pensar na
+            experiencia de quem usa e deixar cada detalhe mais profissional.
+          </p>
+          <p>
+            Ainda estou estudando e aprendendo todos os dias, mas ja busco trabalhar com uma visao
+            completa: estrutura clara, visual marcante, codigo organizado, publicacao online e
+            melhoria continua depois que o projeto fica pronto.
           </p>
         </div>
         <div className="about-grid">
